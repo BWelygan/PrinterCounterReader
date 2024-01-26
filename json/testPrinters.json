@@ -1,0 +1,9 @@
+[
+    {
+      "Name": "SHARENAME",
+      "Server": "PRINTSERVER",
+      "IP": "###.###.###.###",
+      "DriverName": "DRIVERNAME",
+      "Shared": true
+    }
+  ]

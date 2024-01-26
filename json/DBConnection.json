@@ -1,0 +1,3 @@
+{
+  "ConnectionString": "Data Source=SQLSERVER;Initial Catalog=CWIT;Integrated Security=SSPI"
+}

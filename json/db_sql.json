@@ -1,0 +1,62 @@
+[
+    {
+      "Select": {
+        "all": "SELECT * FROM [PrintMon].[dbo].[Printers] WHERE SN LIKE '{0}'; SELECT * FROM [PrintMon].[dbo].[PrtShares] WHERE prtSN LIKE '{0}'; SELECT * FROM [PrintMon].[dbo].[PrtFunctBridge] WHERE prtSN LIKE '{0}'; SELECT * FROM [PrintMon].[dbo].[PrtSupplyBridge] WHERE prtSN LIKE '{0}' AND sReplaceDate IS NULL; SELECT * FROM [PrintMon].[dbo].[PrtAlertBridge] WHERE prtSN LIKE '{0}' AND clearDate IS NULL",
+        "printerOffline": "SELECT pOnline FROM [PrintMon].[dbo].[Printers] WHERE IPAddress LIKE '{0}' OR SN LIKE '{1}'",
+        "printersByPrtSn": "SELECT * FROM [PrintMon].[dbo].[Printers] WHERE SN LIKE '{0}';",
+        "printSharesByPrtSn": "SELECT * FROM [PrintMon].[dbo].[PrtShares] WHERE prtSN LIKE '{0}';",
+        "printFunctionBridgeByPrtSn": "SELECT * FROM [PrintMon].[dbo].[PrtFunctBridge] WHERE prtSN LIKE '{0}';",
+        "totalsByPrtSn": "SELECT * FROM [PrintMon].[dbo].[PrtTotals] WHERE prtSN LIKE '{0}';",
+        "printAlertBridgeByPrtSn": "SELECT * FROM [PrintMon].[dbo].[PrtAlertBridge] WHERE prtSN LIKE '{0}' AND clearDate IS NULL",
+        "functionByName": "SELECT fID FROM [PrintMon].[dbo].[PrtFunction] WHERE prtFunction LIKE '{0}';",
+        "functionById": "SELECT prtFunction FROM [PrintMon].[dbo].[PrtFunction] WHERE fID LIKE '{0}';",
+        "prtFunctions": "SELECT [PrintMon].[dbo].[PrtFunction].[fID],[prtFunction] FROM [PrintMon].[dbo].[PrtFunctBridge] INNER JOIN [PrintMon].[dbo].[PrtFunction] ON [PrintMon].[dbo].[PrtFunctBridge].[fID] = [PrintMon].[dbo].[PrtFunction].[fID] WHERE [PrintMon].[dbo].[PrtFunctBridge].[prtSN] LIKE '{0}';",
+        "suppliesByDesc": "SELECT supplyID FROM [PrintMon].[dbo].[PrtSupplies] WHERE sDescription LIKE '{0}';",
+        "suppliesBySupplyID": "SELECT sDescription FROM [PrintMon].[dbo].[PrtSupplies] WHERE supplyID LIKE '{0}';",
+        "supplyBridgeByPrtSn": "SELECT * FROM [PrintMon].[dbo].[PrtSupplyBridge] WHERE prtSN LIKE '{0}' AND AND sReplaceDate IS NULL;",
+        "alertDescByAdId": "SELECT alertDescription FROM [PrintMon].[dbo].[PrtAlertDesc] WHERE adID LIKE '{0}';",
+        "alertDescByDesc": "SELECT adID FROM [PrintMon].[dbo].[PrtAlertDesc] WHERE alertDescription LIKE '{0}';",
+        "alertLevelByAlId": "SELECT alertLevel FROM [PrintMon].[dbo].[PrtAlertLevel] WHERE alID LIKE '{0}';",
+        "alertLevelByLevel": "SELECT alID FROM [PrintMon].[dbo].[PrtAlertLevel] WHERE alertLevel LIKE '{0}';"
+      },
+      "Insert": {
+        "printer": "INSERT INTO [PrintMon].[dbo].[Printers] (SN, SupportNumber, Location, Name, IPAddress, Model, UpTime, pOnline) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7})",
+        "totals": "INSERT INTO [PrintMon].[dbo].[PrtTotals] (prtSN,Total,TotalBW,TotalColour,Date) VALUES('{0}','{1}','{2}','{3}','{4}')",
+        "canonTotals": "INSERT INTO [dbo].[PrtTotals]([prtSN],[Total],[TotalBW],[TotalColour],[total1],[total2],[totalLarge],[totalSmall],[totalBlack1],[totalSingleColorLarge],[totalSingleColorSmall],[totalBlackLarge],[totalBlackSmall],[total1_2Sided],[totalSingleColor1],[totalFullColorSingleColorLarge],[totalFullColorSingleColorSmall],[totalA2],[totalABlack2],[totalAFullColorSingleColor2],[copyTotal1],[copyTotal2],[copyLarge],[copyBlack2],[copyFullColorSingleColorLarge],[copyFullColorSingleColorSmall],[copyFullColorSingleColor2],[copyFullColorSingleColor1],[printTotal1],[printFullColorSingleColorLarge],[printFullColorSingleColorSmall],[printFullColorSingleColor1],[copyPrintFullColorLarge],[copyPrintFullColorSmall],[scanTotal1],[receivePrintTotal1],[receivePrintTotal2],[receivePrintFullColorLarge],[receivePrintFullColorSmall],[receivePrintBlackLarge],[receivePrintBlackSmall],[receivePrintBlackLarge2Sided],[receivePrintBlackSmall2Sided],[Date]) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}','{28}','{29}','{30}','{31}','{32}','{33}','{34}','{35}','{36}','{37}','{38}','{39}','{40}','{41}','{42}','{43}')",
+        "alertBridge": "INSERT INTO [PrintMon].[dbo].[PrtAlertBridge] (prtSN,alID,adID,snmpTicks,alertDate,clearDate) VALUES('{0}','{1}','{2}','{3}','{4}',NULL)",
+        "alertDescription": "INSERT INTO [PrintMon].[dbo].[PrtAlertDesc] (alertDescription) VALUES ('{0}')",
+        "alertLevel": "INSERT INTO [PrintMon].[dbo].[PrtAlertLevel] (alertLevel) VALUES ('{0}')",
+        "functBridge": "INSERT INTO [PrintMon].[dbo].[PrtFunctBridge] (prtSN,fID) VALUES('{0}','{1}')",
+        "function": "INSERT INTO [PrintMon].[dbo].[PrtFunction] (prtFunction) VALUES('{0}')",
+        "prtShares": "INSERT INTO [PrintMon].[dbo].[PrtShares] (prtSN,ShareName,HostingServer,Decommissioned) VALUES ('{0}','{1}','{2}','{3}')",
+        "supplies": "INSERT INTO [PrtSupplies] (sClass, sDescription, sUnit, sMaxCapacity, sType, sColourantValue, sPartNumber) VALUES ('{0}','{1}','{2}',{3},'{4}','{5}','{6}')",
+        "supplyBridgeCanon": "INSERT INTO [PrtSupplyBridge] (prtSN, supplyID, sInstallDate, sLevel) VALUES ('{0}','{1}','{2}',{3})",
+        "supplyBridgeLexmark": "INSERT INTO [PrtSupplyBridge] (prtSN, supplyID, sInstallDate, sLevel, sReplaceDate, sSerialNumber, sCartridgeType, sPageCountAtInstall, sSupplyStatus, sFirstKnownLevel, sUsage, sCalibrations, sCoverage, sDaysRemaining) VALUES ('{0}','{1}','{2}',{3},'{4}','{5}','{6}',{7},'{8}',{9},{10},{11},{12},{13})",
+        "supplyBriLexNoReplDate": "INSERT INTO [PrtSupplyBridge] (prtSN, supplyID, sInstallDate, sLevel, sSerialNumber, sCartridgeType, sPageCountAtInstall, sSupplyStatus, sFirstKnownLevel, sUsage, sCalibrations, sCoverage, sDaysRemaining) VALUES ('{0}','{1}','{2}',{3},'{4}','{5}',{6},'{7}',{8},{9},{10},{11},{12})",
+        "supplyBriLexNoInstDate": "INSERT INTO [PrtSupplyBridge] (prtSN, supplyID, sLevel, sReplaceDate, sSerialNumber, sCartridgeType, sPageCountAtInstall, sSupplyStatus, sFirstKnownLevel, sUsage, sCalibrations, sCoverage, sDaysRemaining) VALUES ('{0}','{1}',{2},'{3}','{4}','{5}',{6},'{7}',{8},{9},{10},{11},{12})",
+        "supplyBridgeLexNullDate": "INSERT INTO [PrtSupplyBridge] (prtSN, supplyID, sInstallDate, sLevel, sReplaceDate, sSerialNumber, sCartridgeType, sPageCountAtInstall, sSupplyStatus, sFirstKnownLevel, sUsage, sCalibrations, sCoverage, sDaysRemaining) VALUES ('{0}','{1}',NULL,{2},NULL,'{3}','{4}',{5},'{6}',{7},{8},{9},{10},{11})"
+      },
+      "Update": {
+        "Online": "UPDATE [PrintMon].[dbo].[Printers]  SET pOnline = {1} WHERE SN LIKE '{0}'",
+        "rdNumber": "UPDATE [PrintMon].[dbo].[Printers]  SET SupportNumber = '{1}' WHERE SN LIKE '{0}'",
+        "shareName": "UPDATE [PrintMon].[dbo].[PrtShares] SET ShareName = '{1}', HostingServer = '{2}' WHERE prtSN LIKE '{0}'",
+        "decommissioned": "UPDATE [PrintMon].[dbo].[PrtShares] SET Decommissioned = '{1}' WHERE prtSN LIKE '{0}'",
+        "location": "UPDATE [PrintMon].[dbo].[Printers] SET Location = '{1}' WHERE SN LIKE '{0}'",
+        "ipAddr": "UPDATE [PrintMon].[dbo].[Printers] SET IPAddress = '{1}' WHERE SN LIKE '{0}'",
+        "totals": "UPDATE [PrintMon].[dbo].[PrtTotals]  SET Total = '{1}', TotalBW = '{2}', TotalColour = '{3}', Date = '{4}' WHERE prtSN LIKE '{0}'",
+        "canonTotals": "UPDATE [dbo].[PrtTotals] SET [Total] = '{1}',[TotalBW] = '{2}',[TotalColour] = '{3}', [total1] = '{4}', [total2] = '{5}', [totalLarge] = '{6}',[totalSmall] = '{7}',[totalBlack1] = '{8}',[totalSingleColorLarge] = '{9}',[totalSingleColorSmall] = '{10}',[totalBlackLarge] = '{11}',[totalBlackSmall] = '{12}',[total1_2Sided] = '{13}',[totalSingleColor1] = '{14}',[totalFullColorSingleColorLarge] = '{15}'      ,[totalFullColorSingleColorSmall] = '{16}',[totalA2] = '{17}'      ,[totalABlack2] = '{18}',[totalAFullColorSingleColor2] = '{19}',[copyTotal1] = '{20}',[copyTotal2] = '{21}'      ,[copyLarge] = '{22}',[copyBlack2] = '{23}',[copyFullColorSingleColorLarge] = '{24}',[copyFullColorSingleColorSmall] = '{25}',[copyFullColorSingleColor2] = '{26}',[copyFullColorSingleColor1] = '{27}',[printTotal1] = '{28}',[printFullColorSingleColorLarge] = '{29}',[printFullColorSingleColorSmall] = '{30}',[printFullColorSingleColor1] = '{31}',[copyPrintFullColorLarge] = '{32}',[copyPrintFullColorSmall] = '{33}',[scanTotal1] = '{34}'      ,[receivePrintTotal1] = '{35}',[receivePrintTotal2] = '{36}',[receivePrintFullColorLarge] = '{37}',[receivePrintFullColorSmall] = '{38}',[receivePrintBlackLarge] = '{39}',[receivePrintBlackSmall] = '{40}',[receivePrintBlackLarge2Sided] = '{41}',[receivePrintBlackSmall2Sided] = '{42}',[Date] = '{43}' WHERE prtSN LIKE '{0}'",
+        "alertTicks": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET snmpTicks = '{1}' WHERE prtAlBrId LIKE '{0}'",
+        "alertTicksByPrtSN": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET snmpTicks = '{3}' WHERE prtSN LIKE '{0}' AND alID = '{1}' AND adID = '{2}'",
+        "alertClearDate": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET snmpTicks = '{1}', clearDate = '{2}' WHERE prtAlBrId LIKE '{0}'",
+        "alertClearDateByPrtSN": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET snmpTicks = '{3}', clearDate = '{4}' WHERE prtSN LIKE '{0}' AND alID = '{1}' AND adID = '{2}'",
+        "functBridge": "UPDATE [PrintMon].[dbo].[PrtFunctBridge] SET fID = '{1}'  WHERE prtSN LIKE '{0}'",
+        "supplyBridgeLexmark": "UPDATE [PrintMon].[dbo].[PrtSupplyBridge] SET sLevel = {2}, sReplaceDate = '{3}', sSupplyStatus = '{4}', sUsage = {5}, sCalibrations = {6}, sDaysRemaining = {7} WHERE prtSN LIKE '{0}' AND supplyID = '{1}' AND sReplaceDate IS NULL",
+        "supplyBridgeLexNoReplDate": "UPDATE [PrintMon].[dbo].[PrtSupplyBridge] SET sLevel = {2}, sReplaceDate = NULL, sSupplyStatus = '{4}', sUsage = {5}, sCalibrations = {6}, sDaysRemaining = {7} WHERE prtSN LIKE '{0}' AND supplyID = '{1}' AND sReplaceDate IS NULL",
+        "supplyBridge": "UPDATE [PrintMon].[dbo].[PrtSupplyBridge] SET sLevel = {2}, sReplaceDate = {3} WHERE prtSN LIKE '{0}' AND supplyID = '{1}' AND sReplaceDate IS NULL"
+      },
+      "Delete": {
+        "clearAlert": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET clearDate = '{1}'  WHERE prtAlBrId = '{0}'",
+        "clearAlertByPrtSN": "UPDATE [PrintMon].[dbo].[PrtAlertBridge] SET clearDate = '{3}'  WHERE prtSN LIKE '{0}' AND alID = '{1}' AND adID = '{2}'"
+      }
+    }
+  ]

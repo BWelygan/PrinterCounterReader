@@ -1,0 +1,135 @@
+[
+    {
+      "General": {
+        "snmpGet": {
+          "Name":"system.sysName.0",
+          "Location":"system.sysLocation.0",
+          "SystemDescr": "system.sysDescr.0",
+          "SerialNumber": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtGeneral.prtGeneralTable.prtGeneralEntry.17.1",
+          "SysUpTime": "system.sysUpTime.0",
+          "Model": ".iso.org.dod.internet.mgmt.mib-2.host.hrDevice.hrDeviceTable.hrDeviceEntry.hrDeviceDescr.1",
+          "printerStatus": ".iso.org.dod.internet.mgmt.mib-2.host.hrDevice.hrPrinterTable.hrPrinterEntry.hrPrinterStatus.1",
+          "printerErrorState": ".iso.org.dod.internet.mgmt.mib-2.host.hrDevice.hrPrinterTable.hrPrinterEntry.hrPrinterDetectedErrorState.1",
+          "markerSuppliesClass": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesClass.1.",
+          "markerSuppliesType": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesType.1.",
+          "markerSuppliesDescription": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesDescription.1.",
+          "markerSuppliesUnit": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesSupplyUnit.1.",
+          "markerSuppliesMaxCapacity": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesMaxCapacity.1.",
+          "markerSuppliesLevel": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesLevel.1.",
+          "markerColorantValue":".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerColorant.prtMarkerColorantTable.prtMarkerColorantEntry.prtMarkerColorantValue.1.",
+          "prtInputType": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputType.1.",
+          "prtInputDimUnit": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputDimUnit.1.",
+          "prtInputCapacityUnit": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputCapacityUnit.1.",
+          "prtInputMaxCapacity": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputMaxCapacity.1.",
+          "prtInputCurrentLevel": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputCurrentLevel.1.",
+          "prtInputName": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputName.1.",
+          "prtInputMediaWeight": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputMediaWeight.1.",
+          "prtInputMediaType": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputMediaType.1.",
+          "prtInputMediaColor": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputMediaColor.1."
+        },
+        "snmpGetTree": {
+          "suppliesIndex": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerSupplies.prtMarkerSuppliesTable.prtMarkerSuppliesEntry.prtMarkerSuppliesMarkerIndex.1",
+          "markerColorantMarkerIndex":".iso.org.dod.internet.mgmt.mib-2.printmib.prtMarkerColorant.prtMarkerColorantTable.prtMarkerColorantEntry.prtMarkerColorantMarkerIndex.1",
+          "prtInputIndex": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtInput.prtInputTable.prtInputEntry.prtInputType"
+        }
+      }
+    },
+    {
+      "Alerts": {
+        "snmpGet": {
+          "prtAlertSeverityLevel": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtAlert.prtAlertTable.prtAlertEntry.prtAlertSeverityLevel.1.",
+          "prtAlertDescription": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtAlert.prtAlertTable.prtAlertEntry.prtAlertDescription.1.",
+          "prtAlertTime": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtAlert.prtAlertTable.prtAlertEntry.prtAlertTime.1."
+        },
+        "snmpGetTree": {
+          "prtAlertIndex": ".iso.org.dod.internet.mgmt.mib-2.printmib.prtAlert.prtAlertTable.prtAlertEntry.prtAlertIndex.1"
+        }
+      }
+    },
+    {
+      "Brother":{
+        "snmpString": {
+          "public": "public",
+          "private": "private"
+        },
+        "snmpVersion": {
+          "version": 1
+        },
+        "snmpGet": {
+          "SerialNumber": "1.3.6.1.4.1.2435.2.3.9.4.2.1.5.5.1"
+        }
+      }
+    },
+    {
+      "Canon":{
+        "snmpString": {
+          "public": "public",
+          "private": "private"
+        },
+        "snmpVersion": {
+          "version": 1
+        },
+        "snmpGet": {
+          "Functions": ".iso.org.dod.internet.private.enterprises.1602.1.5.5.1.2.1.3.1.",
+          "colourBasicType": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.3.1.3.",
+          "colourBasicCounter": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.3.1.4.",
+          "colourBasic2Type": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.2.1.3.",
+          "colourBasic2Counter": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.2.1.4.",
+          "colourFullType": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.4.1.3.",
+          "colourFullCounter": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.4.1.4.",
+          "colourFull2Type": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.1.1.3.",
+          "colourFull2Counter": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.1.1.4.",
+          "userInfo": ".iso.org.dod.internet.private.enterprises.1602.1.2.2.1",
+          "managerTelNumber": ".iso.org.dod.internet.private.enterprises.1602.1.2.2.2",
+          "comment": ".iso.org.dod.internet.private.enterprises.1602.1.2.2.3"
+        },
+        "snmpGetTree": {
+          "Functions": ".iso.org.dod.internet.private.enterprises.1602.1.5.5.1.2.1.2",
+          "colourBasic": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.3.1.2.",
+          "colourBasic2": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.2.1.2.",
+          "colourFull": ".iso.org.dod.internet.private.enterprises.1602.1.11.1.4.1.2.",
+          "colourFull2": ".iso.org.dod.internet.private.enterprises.1602.1.11.2.1.1.2."
+        }
+      }
+    },
+    {
+      "Lexmark": {
+        "snmpString": {
+          "public": "public",
+          "private": "private"
+        },
+        "snmpVersion": {
+          "version": 1
+        },
+        "snmpGet": {
+          "Total": ".iso.org.dod.internet.private.enterprises.641.6.4.2.1.1.4.1.3",
+          "TotalBW": ".iso.org.dod.internet.private.enterprises.641.6.4.2.1.1.4.1.5",
+          "TotalColour": ".iso.org.dod.internet.private.enterprises.641.6.4.2.1.1.4.1.6",
+          "Functions": ".iso.org.dod.internet.private.enterprises.641.6.3.1.1.8.1.",
+          "currentSupplyType": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.3.1.",
+          "currentSupplyColorantValue": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.4.1.",
+          "currentSupplyDescription": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.5.1.",
+          "currentSupplySerialNumber": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.6.1.",
+          "currentSupplyPartNumber": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.7.1.",
+          "currentSupplyClass": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.8.1.",
+          "currentSupplyCartridgeType": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.9.1.",
+          "currentSupplyInstallDate": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.10.1.",
+          "currentSupplyPageCountAtInstall": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.11.1.",
+          "currentSupplyCurrentStatus": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.12.1.",
+          "currentSupplyCapacityUnit": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.13.1.",
+          "currentSupplyCapacity": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.14.1.",
+          "currentSupplyFirstKnownLevel": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.15.1.",
+          "currentSupplyCurrentLevel": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.16.1.",
+          "currentSupplyUsage": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.17.1.",
+          "currentSupplyCalibrations": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.18.1.",
+          "currentSupplyCoverage": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.19.1.",
+          "currentSupplyDaysRemaining": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.20.1."
+        },
+        "snmpGetTree": {
+          "Colours": "printmib.prtMarkerColorant.prtMarkerColorantTable.prtMarkerColorantEntry.prtMarkerColorantMarkerIndex",
+          "Functions": ".iso.org.dod.internet.private.enterprises.641.6.3.1.1.2",
+          "currentSupplyInventoryIndex": ".iso.org.dod.internet.private.enterprises.641.6.4.4.1.1.2.1"
+        }     
+      }
+    }
+  ]
