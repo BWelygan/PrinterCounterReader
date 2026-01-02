@@ -820,7 +820,7 @@ function Set-CWITPrinter {
 			Throw "ERROR not enough Printer Information.`n" + $fctPrinter
 			return
 		}
-		if($Online -and ($null -eq $fctPrinter.SerialNumber -or "Error" -like $fctPrinter.SerialNumber -and ("Not a Canon or Lexmark Printer" -notlike $fctPrinter.Error || $null -ne $fctPrinter.Error))){
+		if($Online -and ($null -eq $fctPrinter.SerialNumber -or "Error" -like $fctPrinter.SerialNumber -and ("Not a Canon or Lexmark Printer" -notlike $fctPrinter.Error -or $null -ne $fctPrinter.Error))){
 			Throw "ERROR no serial number for device or SNMP get error.`n" + $fctPrinter
 			return
 		}
